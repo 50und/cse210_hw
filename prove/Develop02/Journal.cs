@@ -87,4 +87,4 @@ class Journal
         return _loadEntries;
     }
 
-}
+} 
