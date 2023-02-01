@@ -25,22 +25,22 @@ public class Fraction
     }
     public int GetTop()
     {
-        return _top
+        return _top;
     }
 
     public void SetTop(int top)
     {
-        _top = top
+        _top = top;
     }
 
     public int GetBottom()
     {
-        return _bottom
+        return _bottom;
     }
 
-    public int SetBottom(int bottom)
+    public void SetBottom(int bottom)
     {
-        _bottom=bottom
+        _bottom=bottom;
     }
 
     public string GetFractionString()
@@ -51,7 +51,7 @@ public class Fraction
 
     public double GetFractionDecimal()
     {
-        double decimal = (double)_top/(double)_bottom;
-        return decimal;
+        double _decimal = (double)_top/(double)_bottom;
+        return _decimal;
     }
 }
