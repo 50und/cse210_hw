@@ -17,7 +17,7 @@ class Journal
     string _date = _theCurrentTime.ToShortDateString();
     public void Display()
     {
-        _entries.AddRange(_loadEntries);
+        _entries.AddRange(Load());
         System.Console.WriteLine("Entry--------");
         foreach (Entry entry in _entries)
         {
@@ -53,9 +53,7 @@ class Journal
         {
             foreach (Entry entry in _entries)
             {
-                _outputFile.Write($"Date: {entry._date}");
-                _outputFile.Write($"{entry._prompt}");
-                _outputFile.Write($"{entry._response}");
+                _outputFile.Write($"Date: {entry._date}, {entry._prompt}, {entry._response}");
             }
         }
     }
@@ -65,7 +63,7 @@ class Journal
         System.Console.WriteLine("Enter file name: ");
         string fileName = System.Console.ReadLine();
 
-        public List<Entry> _loadEntries = new List<Entry>();
+        List<Entry> _loadEntries = new List<Entry>();
 
         string[] lines = System.IO.File.ReadAllLines(fileName);
 
@@ -82,7 +80,7 @@ class Journal
             loadedEntry._prompt=prompt;
             loadedEntry._response=response;
 
-            _loadEntries.Add(loadedEntry)
+            _loadEntries.Add(loadedEntry);
         }
         return _loadEntries;
     }
