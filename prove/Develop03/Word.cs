@@ -39,14 +39,7 @@ class Word
 
     public bool IsHidden()
     {
-        if (_hidden == true)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return _hidden;
     }
 
     
