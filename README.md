@@ -1,7 +1,6 @@
-# cse210-student-template
-This is the starter code for students in CSE 210.
+# cse210-coding-Stephen-Coley
 
-This repository contains the starter code for many different projects. They are arranged as follows:
+This repository contains the code for all of my projects in CSE210
 
 * `sandbox` - An empty project that you can use to play around with any concepts you like.
 * `csharp-prep` - Starter projects for each of the C# Prep assignments.
