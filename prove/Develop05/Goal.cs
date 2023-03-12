@@ -13,14 +13,30 @@ public abstract class Goal
         _description = description;
 
     }
-    public Goal()
+    public Goal(string goal)
     {
-        SetStringRepresentation();
-    }
+        SetStringRepresentation(goal);
+    } 
+
+    
 
     public abstract bool GetCompleted();
 
-    public abstract string SetStringRepresentation(string rep);
+    public abstract void SetStringRepresentation(string rep);
+
+    public abstract string GetStringRepresentation();
+
+    public void Save(string filename)
+    {
+        using (StreamWriter _outputfile = new StreamWriter(filename))
+        {
+            _outputfile.Write(GetStringRepresentation());
+        }
+    }
+
+
+
+
 
 
 

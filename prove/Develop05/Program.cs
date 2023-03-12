@@ -12,7 +12,34 @@ class Program
 
 
         string [] lines = System.IO.File.ReadAllLines("");
+        int total = Int32.Parse(lines[0]);
 
-           22
+        List<Goal> goals = new List<Goal>{};
+
+        foreach (string l in lines)
+        {
+            string [] line = l.Split(":");
+            string goalType = line[0];
+            if (goalType ==  "Simple")
+            {
+                Simple s = new Simple(line[1]);
+                goals.Add(s);
+            }
+            else if (goalType == "Eternal")
+            {
+                Eternal e = new Eternal(line[1]);
+                goals.Add(e);
+            }
+            else if (goalType== "Checklist")
+            {
+                Checklist c = new Checklist(line[1]);
+                goals.Add(c);
+            }
+        }
+        
+
+
+
+
     }
 }
