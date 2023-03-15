@@ -17,10 +17,9 @@ public abstract class Goal
     {
         SetStringRepresentation(goal);
     } 
-
     
 
-    public abstract bool GetCompleted();
+    public abstract string GetCompleted();
 
     public abstract void SetStringRepresentation(string rep);
 
@@ -30,9 +29,17 @@ public abstract class Goal
     {
         using (StreamWriter _outputfile = new StreamWriter(filename))
         {
-            _outputfile.Write(GetStringRepresentation());
+            _outputfile.WriteLine(GetStringRepresentation());
         }
     }
+
+    public abstract int DoIt();
+
+    public void Display()
+    {
+        Console.WriteLine(GetStringRepresentation());
+    }
+
 
 
 

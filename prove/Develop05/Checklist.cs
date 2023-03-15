@@ -6,7 +6,7 @@ public class Checklist: Goal
     private int _completedTimes = 0;
     private int _bonusPoints = 0;
 
-    public Checklist(int points, string title, string description, int goalTimes, int completedTimes, int bonus): base(points, title, description)
+    public Checklist(int points, string title, string description, int goalTimes, int bonus, int completedTimes = 0): base(points, title, description)
     {
         _points = points;
         _title = title;
@@ -35,11 +35,32 @@ public class Checklist: Goal
 
     public override string GetStringRepresentation()
     {
-        string stringRep = $"Checklist:{_title}|{_description}|{_points}|{_goalTimes}|{_completedTimes}|{_bonusPoints}";
+        string stringRep = $"Checklist:[{GetCompleted()}]{_title}|{_description}|{_points}|{_goalTimes}|{_completedTimes}|{_bonusPoints}";
         return stringRep;
     }
 
-    
+    public override string GetCompleted()
+    {
+        if (_goalTimes == _completedTimes)
+        {
+            return "X";
+        }
+        else
+        {
+            return "";
+        }
+    }
 
-
+    public override int DoIt()
+    {
+        _completedTimes+=1;
+        if (GetCompleted()=="X")
+        {
+            return _bonusPoints;
+        }
+        else
+        {
+            return _points;
+        }
+    }
 }
