@@ -2,7 +2,7 @@ using System;
 
 public class Outdoor: Event
 {
-    string _weather = "";
+    private string _weather = "";
 
     public Outdoor(string title, string desc, string date, string time, string address, string weather): base(title, desc, date, time, address)
     {

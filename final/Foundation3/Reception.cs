@@ -2,7 +2,7 @@ using System;
 
 public class Reception: Event
 {
-    string _email = "";
+    private string _email = "";
 
     public Reception(string title, string desc, string date, string time, string address, string email): base(title, desc, date, time, address)
     {
