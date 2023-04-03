@@ -6,7 +6,7 @@ public abstract class Event
     protected string _description = "";
     protected string _date = "";
     protected string _time = "";
-    protected string _address = "";
+    protected Address _address = new Address("");
 
     public Event(string title, string desc, string date, string time, string address)
     {
@@ -14,12 +14,12 @@ public abstract class Event
         _description = desc;
         _date = date;
         _time = time;
-        _address = address;
+        _address.SetAddress(address);
     }
 
     public string StandardDetails()
     {
-        string details = $"{_title} \n {_description} \n {_date}: {_time} \n {_address}";
+        string details = $"{_title} \n {_description} \n {_date}: {_time} \n {_address.GetAddress()}";
         return details;
     }
     public abstract string FullDetails();

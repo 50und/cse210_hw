@@ -11,7 +11,7 @@ public class Reception: Event
 
     public override string FullDetails()
     {
-        string details = $"{_title} \n {_description} \n {_date}, {_time} \n {_address} \n RSVP via email: {_email}";
+        string details = $"{_title} \n {_description} \n {_date}, {_time} \n {_address.GetAddress()} \n RSVP via email: {_email}";
         return details;   
     }
     public override string ShortDescription()

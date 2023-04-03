@@ -5,7 +5,6 @@ public class Lecture: Event
     private string _speaker = "";
     private int _capacity = 0;
 
-
     public Lecture(string title, string desc, string date, string time, string address, string speaker, int cap): base(title, desc, date, time, address)
     {
         _speaker = speaker;
@@ -14,7 +13,7 @@ public class Lecture: Event
 
     public override string FullDetails()
     {
-        string details = $"{_title} \n Speaker: {_speaker} \n {_description} \n {_date}, {_time} \n {_address} \n capacity: {_capacity}";
+        string details = $"{_title} \n Speaker: {_speaker} \n {_description} \n {_date}, {_time} \n {_address.GetAddress()} \n capacity: {_capacity}";
         return details;   
     }
     public override string ShortDescription()

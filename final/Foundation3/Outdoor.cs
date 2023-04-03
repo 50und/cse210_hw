@@ -11,7 +11,7 @@ public class Outdoor: Event
 
     public override string FullDetails()
     {
-        string details = $"{_title} \n {_description} \n {_date}, {_time} \n {_address} \n weather forecast: {_weather}";
+        string details = $"{_title} \n {_description} \n {_date}, {_time} \n {_address.GetAddress()} \n weather forecast: {_weather}";
         return details;   
     }
     public override string ShortDescription()
